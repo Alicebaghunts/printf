@@ -6,14 +6,13 @@
 /*   By: alisharu <alisharu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 20:02:06 by alisharu          #+#    #+#             */
-/*   Updated: 2025/01/26 20:32:38 by alisharu         ###   ########.fr       */
+/*   Updated: 2025/01/28 17:39:06 by alisharu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include "libft.h"
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
