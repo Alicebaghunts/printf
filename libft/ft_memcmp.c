@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alisharu <alisharu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/26 20:02:06 by alisharu          #+#    #+#             */
-/*   Updated: 2025/01/31 17:29:32 by alisharu         ###   ########.fr       */
+/*   Created: 2025/01/13 16:45:37 by alisharu          #+#    #+#             */
+/*   Updated: 2025/01/14 18:03:18 by alisharu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft.h"
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned char	*ptr;
+	unsigned char	*ptr1;
 
-int	ft_printf(const char *input, ...);
-int	ft_print_ptr(unsigned long value, int asc);
-int	ft_print_usd(unsigned int num);
-int	ft_print_hex(size_t value, int asc);
-
-#endif
+	if (n == 0)
+		return (0);
+	ptr = (unsigned char *)s1;
+	ptr1 = (unsigned char *)s2;
+	while ((*ptr == *ptr1) && n - 1 > 0)
+	{
+		ptr++;
+		ptr1++;
+		n--;
+	}
+	return ((int)(*ptr - *ptr1));
+}

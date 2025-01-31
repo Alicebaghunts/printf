@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alisharu <alisharu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/26 20:02:06 by alisharu          #+#    #+#             */
-/*   Updated: 2025/01/31 17:29:32 by alisharu         ###   ########.fr       */
+/*   Created: 2025/01/16 16:59:44 by alisharu          #+#    #+#             */
+/*   Updated: 2025/01/29 16:06:40 by alisharu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft.h"
+void	ft_putendl(char *s)
+{
+	int	len;
 
-int	ft_printf(const char *input, ...);
-int	ft_print_ptr(unsigned long value, int asc);
-int	ft_print_usd(unsigned int num);
-int	ft_print_hex(size_t value, int asc);
-
-#endif
+	if (!s)
+		return ;
+	len = ft_strlen(s);
+	write(1, s, len);
+	write(1, "\n", 1);
+}

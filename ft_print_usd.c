@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_usd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alisharu <alisharu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/26 20:02:06 by alisharu          #+#    #+#             */
-/*   Updated: 2025/01/31 17:29:32 by alisharu         ###   ########.fr       */
+/*   Created: 2025/01/29 16:57:47 by alisharu          #+#    #+#             */
+/*   Updated: 2025/01/30 20:40:02 by alisharu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft.h"
+int	ft_print_usd(unsigned int num)
+{
+	char	arr[10];
+	int		count;
+	int		i;
 
-int	ft_printf(const char *input, ...);
-int	ft_print_ptr(unsigned long value, int asc);
-int	ft_print_usd(unsigned int num);
-int	ft_print_hex(size_t value, int asc);
-
-#endif
+	i = 0;
+	count = 0;
+	if (num == 0)
+	{
+		ft_putchar('0');
+		return (1);
+	}
+	while (num > 0)
+	{
+		arr[i] = (num % 10) + '0';
+		num /= 10;
+		i++;
+	}
+	while (i > 0)
+	{
+		ft_putchar(arr[i - 1]);
+		i--;
+		count++;
+	}
+	return (count);
+}

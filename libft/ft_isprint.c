@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alisharu <alisharu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/26 20:02:06 by alisharu          #+#    #+#             */
-/*   Updated: 2025/01/31 17:29:32 by alisharu         ###   ########.fr       */
+/*   Created: 2025/01/10 17:45:52 by alisharu          #+#    #+#             */
+/*   Updated: 2025/01/12 18:59:05 by alisharu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft.h"
-
-int	ft_printf(const char *input, ...);
-int	ft_print_ptr(unsigned long value, int asc);
-int	ft_print_usd(unsigned int num);
-int	ft_print_hex(size_t value, int asc);
-
-#endif
+int	ft_isprint(int c)
+{
+	if (c >= ' ' && c <= '~')
+		return (1);
+	return (0);
+}

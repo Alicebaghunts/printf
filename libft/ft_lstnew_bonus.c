@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alisharu <alisharu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/26 20:02:06 by alisharu          #+#    #+#             */
-/*   Updated: 2025/01/31 17:29:32 by alisharu         ###   ########.fr       */
+/*   Created: 2025/01/16 18:06:58 by alisharu          #+#    #+#             */
+/*   Updated: 2025/01/21 21:06:43 by alisharu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
-# include "libft.h"
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new_list;
 
-int	ft_printf(const char *input, ...);
-int	ft_print_ptr(unsigned long value, int asc);
-int	ft_print_usd(unsigned int num);
-int	ft_print_hex(size_t value, int asc);
-
-#endif
+	new_list = malloc(sizeof(t_list));
+	if (!new_list)
+		return (0);
+	new_list -> content = content;
+	new_list -> next = NULL;
+	return (new_list);
+}
