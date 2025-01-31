@@ -41,10 +41,10 @@ bonus: $(OBJS) $(OBJSB)
 	$(LIBC) $(NAME) $(OBJS) $(OBJSB)
 
 clean:
-	$(RM) $(OBJS) $(OBJSB)
+	@$(RM) $(OBJS) $(OBJSB)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 

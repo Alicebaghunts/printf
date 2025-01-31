@@ -5,12 +5,17 @@ SRCS = ft_printf.c ft_print_hex.c ft_print_usd.c ft_print_ptr.c
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
+
 CFLAGS = -Wall -Wextra -Werror
-ARFLAGS = rc
+
+ARFLAGS = rc 
+
 RM = rm -f
 
 LIBFT_DIR = libft
+
 LIBFT = $(LIBFT_DIR)/libft.a
+
 INC = -I $(LIBFT_DIR)
 
 all: $(NAME)
@@ -26,7 +31,7 @@ $(LIBFT):
 	make -C $(LIBFT_DIR)
 
 clean:
-	$(RM) $(OBJS) 2>/dev/null || true
+	$(RM) $(OBJS)
 	make -C $(LIBFT_DIR) clean
 
 fclean: clean
