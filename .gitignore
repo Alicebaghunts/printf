@@ -1,0 +1,8 @@
+*.d
+*.o
+*.a
+*.dSYM/
+push_swap
+checker
+.DS_Store
+.vscode
